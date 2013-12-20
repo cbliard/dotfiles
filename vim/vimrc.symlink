@@ -1,9 +1,73 @@
 syntax on
 
-set incsearch
+" Wrap gitcommit file types at the appropriate length (??)
+filetype indent plugin on
+
 set tabstop=4
 set expandtab
 set shiftwidth=4
+set ignorecase
+set smartcase
+"set noautoindent
+"set smartindent
+set modeline
+set hlsearch
+set incsearch
+set mouse=a
+set number
+set cursorline
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+set pastetoggle=<F3>
+
+" ruby files
+au BufNewFile,BufRead *.cap set filetype=ruby
+autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
+
+execute pathogen#infect()
+
+" NERDTree
+nnoremap <F2> :NERDTreeToggle<CR>
+
+" view blank spaces
+set listchars=tab:»·,trail:·
+set list
+:highlight SpecialKey ctermfg=DarkGray guifg=Gray
+
+" highlight trailing whitespaces
+" see http://vim.wikia.com/wiki/Highlight_unwanted_spaces for reference
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+" font
+set guifont=Liberation\ Mono\ 8
+
+" Switch between Vim window splits easily
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+nmap <silent> <A-l> :wincmd l<CR>
+
+" enable The vim-colors-solarized
+syntax enable
+set background=dark
+colorscheme solarized
+call togglebg#map("<F5>")
+"let g:airline_theme = 'solarized'
+let g:airline_theme = 'luna'
+let g:airline_detect_modified = 1
+let g:airline_enable_branch = 1
+let g:airline_branch_prefix='⭠'
+let g:airline_left_sep = '⮀'
+let g:airline_left_alt_sep = '⮁'
+let g:airline_right_sep = '⮂'
+let g:airline_right_alt_sep = '⮃'
+let g:airline_readonly_symbol = '⭤'
+let g:airline_linecolumn_prefix = '⭡'
+
+" For Gitgutter colors
+highlight clear SignColumn
