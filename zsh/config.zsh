@@ -38,6 +38,10 @@ setopt notify  # report status of background jobs immediately
 
 unsetopt beep # no beep
 
+# select words as in bash (for Meta-backspace)
+autoload -U select-word-style
+select-word-style bash
+
 # don't expand aliases _before_ completion has finished
 #   like: git comm-[tab]
 setopt complete_aliases
