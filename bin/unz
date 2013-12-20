@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for f in "$@"
+do
+    f="${f%.zzz}.zzz"
+    [ -e "$f" ] && mv "$f" "${f%.zzz}" || echo "$f does not exist"
+done
+

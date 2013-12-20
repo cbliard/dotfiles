@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if ! [ -e "$1" ]
+then
+  echo "error: $1 does not exist"
+  exit 1
+fi
+
+if ! [ -w "$1" ]
+then
+  echo "error: $1 is not writable"
+  exit 1
+fi
+
+dir=$(dirname "$1")
+if ! [ -w "$dir" ]
+then
+  echo "error: directory $dir is not writable"
+  exit 1
+fi
+
+mv "$1" "$1".zzz
+
