@@ -1,0 +1,27 @@
+# like cp, but create the directory if needed and cd to the directory. It
+# also unzips the file if necessary
+function cpcd() {
+    SRC=$1
+    DEST=$2
+    if [ -z "$SRC" ] ; then
+        echo "Missing source file"
+        return
+    fi
+    if [ -z "$DEST" ] ; then
+        echo "Missing destination file"
+        return
+    fi
+    if [ -f "$DEST" ] ; then
+        echo "$DEST is a file. should be a directory"
+        return
+    fi
+    [ -d "$DEST" ] || mkdir "$DEST"
+
+    cp "$SRC" "$DEST"
+    cd "$DEST"
+    DESTFILE="$(basename $SRC)"
+    if LANG=C file "$DESTFILE" | grep -q "Zip archive data" ; then
+        unzip "$DESTFILE"
+        rm "$DESTFILE"
+    fi
+}
