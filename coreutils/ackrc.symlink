@@ -1,7 +1,10 @@
+# Follow symlinks
+--follow
 # Always color, even if piping to a filter
 --color
 # Custome types
 --type-set=handlebars=.hbs,.handlebars
+--type-set=capistrano=.cap
 --type-add=css=.sass
 # Exclude tmp dirs
 --ignore-dir=tmp
