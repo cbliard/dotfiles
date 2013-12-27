@@ -5,6 +5,7 @@
 # Custome types
 --type-set=handlebars=.hbs,.handlebars
 --type-set=capistrano=.cap
+--type-set=puppet=.pp
 --type-add=css=.sass
 # Exclude tmp dirs
 --ignore-dir=tmp
