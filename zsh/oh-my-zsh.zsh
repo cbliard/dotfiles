@@ -45,7 +45,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler debian git github vagrant cp rails colorize)
+plugins=(debian git github vagrant cp rails colorize)
 
 source $ZSH/oh-my-zsh.sh
 
