@@ -3,8 +3,9 @@
 # Always color, even if piping to a filter
 --color
 # Custome types
---type-set=handlebars=.hbs,.handlebars
 --type-set=capistrano=.cap
+--type-set=handlebars=.hbs,.handlebars
+--type-set=json=.json
 --type-set=puppet=.pp
 --type-add=css=.sass
 # Exclude tmp dirs
