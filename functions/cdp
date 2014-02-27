@@ -1,0 +1,9 @@
+# If inside a git repository, go to the root of that repository
+# If not, go to home directory
+function cdp() {
+  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+    cd "$(git rev-parse --show-toplevel)"
+  else
+    cd
+  fi
+}
