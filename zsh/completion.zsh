@@ -17,3 +17,7 @@ zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:
 zmodload zsh/complist
 bindkey -M menuselect ' ' accept-and-infer-next-history
 bindkey -M menuselect '^?' undo
+
+# group completion matches by their type
+zstyle ':completion:*:descriptions' format '%B%U%d%b%u'
+zstyle ':completion:*' group-name ''
