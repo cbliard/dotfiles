@@ -1,5 +1,5 @@
-# Follow symlinks
---follow
+# Do not follow symlinks
+--nofollow
 # Always color, even if piping to a filter
 --color
 # Custome types
