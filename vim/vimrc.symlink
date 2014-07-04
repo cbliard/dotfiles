@@ -21,6 +21,7 @@ set pastetoggle=<F3>
 
 " ruby files
 au BufNewFile,BufRead *.cap set filetype=ruby
+au BufNewFile,BufRead Veeweefile set filetype=ruby
 autocmd FileType eruby setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
