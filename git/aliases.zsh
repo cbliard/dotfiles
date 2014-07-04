@@ -12,3 +12,6 @@ alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 compdef _git gs=git-status
 alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
            perl -pe 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
+# git log diff from last pull
+alias gld='git log --color --reverse --patch --stat --abbrev-commit --date=relative --decorate ORIG_HEAD..'
+compdef _git gld=git-log
