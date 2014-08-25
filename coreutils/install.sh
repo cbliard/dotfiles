@@ -13,5 +13,5 @@ install_packages() {
   fi
 }
 
-install_packages ack-grep curl terminator vim zsh
+install_packages ack-grep colordiff curl terminator vim zsh
 
