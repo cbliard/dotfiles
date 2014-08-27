@@ -11,6 +11,7 @@ install_packages() {
   if [ ${#packages[@]} -gt 0 ] ; then
     sudo apt-get install ${packages[@]}
   fi
+  true
 }
 
 install_packages ack-grep colordiff curl terminator vim zsh
