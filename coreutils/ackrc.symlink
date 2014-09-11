@@ -10,3 +10,4 @@
 --type-add=css=.sass
 # Exclude tmp dirs
 --ignore-dir=tmp
+--ignore-dir=.tmp
