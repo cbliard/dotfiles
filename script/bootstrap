@@ -70,6 +70,12 @@ install_dotfiles () {
       overwrite=false
       backup=false
       skip=false
+      skip_linked=false
+
+      if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$source" ]
+      then
+        skip_linked=true
+      fi
 
       if [ $overwrite_all = false ] && [ $backup_all = false ] && [ $skip_all = false ] && [ $skip_linked = false ]
       then
@@ -106,11 +112,14 @@ install_dotfiles () {
         success "moved $dest to $dest.backup"
       fi
 
-      if [ $skip = false ] && [ $skip_all = false ]
+      if [ $skip = false ] && [ $skip_all = false ] && [ $skip_linked = false ]
       then
         link_files "$source" "$dest"
-      else
+      elif [ $skip = true ]
+      then
         success "skipped $source"
+      else
+        success "skipped $source (already linked)"
       fi
 
     else
