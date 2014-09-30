@@ -16,6 +16,8 @@ alias gl='git log'
 compdef _git gl=git-log
 
 # The rest of my fun git aliases
+alias gaa='git add --all'
+compdef _git gaa=git-add
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative"
 alias gs='git status -sb' # upgrade your git if -sb breaks for you. it's fun.
 compdef _git gs=git-status
