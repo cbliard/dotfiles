@@ -11,3 +11,4 @@
 # Exclude tmp dirs
 --ignore-dir=tmp
 --ignore-dir=.tmp
+--ignore-dir=.idea
