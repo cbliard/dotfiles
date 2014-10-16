@@ -1,0 +1,35 @@
+{
+    // When only either the left or right bracket can be found
+    // this defines if the unmatched bracket should be shown.
+    // "show_unmatched" : true,
+
+    // Enable high visibility by default when sublime starts up
+    // If sublime is already running and this gets changed,
+    // you will not see any changes (restart requrired to see change)
+    // "high_visibility_enabled_by_default": true,
+
+    // High visibility style and color for high visibility mode
+    // (solid|outline|underline)
+    // "high_visibility_style": "outline",
+
+    // (scope|__default__|__bracket__)
+    // "high_visibility_color": "__bracket__",
+
+    // Match brackets only when the cursor is touching the inside of the bracket
+    // "match_only_adjacent": false,
+
+    // Character threshold to search
+    // "search_threshold": 5000,
+
+    // Ignore threshold
+    // "ignore_threshold": false,
+
+    // Set mode for string escapes to ignore (regex|string)
+    // "bracket_string_escape_mode": "string",
+
+    // Set max number of multi-select brackets that will be searched automatically
+    /// "auto_selection_threshold" : 10,
+
+    // Disable gutter icons when doing multi-select
+    // "no_multi_select_icons": false
+}

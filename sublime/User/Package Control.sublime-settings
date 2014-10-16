@@ -1,0 +1,25 @@
+{
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"BracketHighlighter",
+		"Case Conversion",
+		"Emacs-like Modelines",
+		"Git",
+		"GitGutter",
+		"GitHub Flavored Markdown Preview",
+		"Handlebars",
+		"MultiEditUtils",
+		"Origami",
+		"Puppet",
+		"SideBarEnhancements",
+		"SublimeERB",
+		"SublimeLinter",
+		"SublimeLinter-contrib-puppet",
+		"SublimeLinter-contrib-puppet-lint",
+		"SublimeLinter-jshint",
+		"SublimeLinter-ruby",
+		"ToggleQuotes",
+		"WordHighlight"
+	]
+}
