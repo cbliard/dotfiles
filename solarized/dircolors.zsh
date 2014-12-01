@@ -1,1 +1,1 @@
-eval `dircolors $DOTFILES/solarized/dircolors.ansi-dark`
+eval `dircolors --bourne-shell $DOTFILES/solarized/dircolors.ansi-dark`
