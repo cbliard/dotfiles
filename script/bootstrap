@@ -2,7 +2,7 @@
 #
 # bootstrap installs things.
 
-DOTFILES_ROOT="`pwd`"
+DOTFILES_ROOT=".dotfiles"
 
 set -e
 
@@ -60,6 +60,7 @@ install_dotfiles () {
   backup_all=false
   skip_all=false
 
+  cd $HOME
   for source in `find $DOTFILES_ROOT -maxdepth 2 -name \*.symlink`
   do
     dest="$HOME/.`basename \"${source%.*}\"`"
@@ -79,7 +80,7 @@ install_dotfiles () {
 
       if [ $overwrite_all = false ] && [ $backup_all = false ] && [ $skip_all = false ] && [ $skip_linked = false ]
       then
-        user "File already exists: `basename $source`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+        user "File already exists: `basename $dest`, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
         read -n 1 action
 
         case "$action" in
