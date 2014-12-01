@@ -4,9 +4,9 @@
 [ -n "$ZSH_CUSTOM" ] || return 0
 
 # Change git pull and gitpush
-unalias gl # I often intend to do git log, but does git pull
+unalias gl &> /dev/null # I often intend to do git log, but does git pull
 compdef -d gl
-unalias gp
+unalias gp &> /dev/null
 compdef -d gp
 alias gph='git push'
 compdef _git gph=git-push
