@@ -19,6 +19,14 @@ set cursorline
 
 set pastetoggle=<F3>
 
+" vertical ruler at 80 chars
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
+
+" Escape insert mode by typing jj
+:inoremap jj <Esc>
+
 " ruby files
 au BufNewFile,BufRead *.cap set filetype=ruby
 au BufNewFile,BufRead Veeweefile set filetype=ruby
