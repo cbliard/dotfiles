@@ -24,6 +24,9 @@ if exists('+colorcolumn')
   set colorcolumn=80
 endif
 
+" leader key mapped to ,
+:let mapleader = ","
+
 " Escape insert mode by typing jj
 :inoremap jj <Esc>
 

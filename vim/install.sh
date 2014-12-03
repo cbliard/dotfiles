@@ -22,6 +22,8 @@ bundles[vim-abolish]='https://github.com/tpope/vim-abolish.git'
 bundles[vim-airline]='https://github.com/bling/vim-airline'
 # Solarized color theme
 bundles[vim-colors-solarized]='https://github.com/altercation/vim-colors-solarized.git'
+# Vim motions on speed!
+bundles[vim-easymotion]='https://github.com/Lokaltog/vim-easymotion'
 # Awesome git wrapper. :G<command>
 bundles[vim-fugitive]='https://github.com/tpope/vim-fugitive.git'
 # Shows a git diff in the gutter (sign column) and stages/reverts hunks
