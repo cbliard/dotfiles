@@ -61,6 +61,10 @@ nmap <silent> <A-h> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 nmap <silent> <A-l> :wincmd l<CR>
 
+" Map fuzzy file finder (CtrlP) to Ctrl-P key
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
 " enable The vim-colors-solarized
 syntax enable
 set background=dark
