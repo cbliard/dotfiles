@@ -11,7 +11,7 @@ fi
 # install bundles
 declare -A bundles
 # Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-bundles[ctrlp]='https://github.com/kien/ctrlp.vim'
+bundles[ctrlp]='https://github.com/ctrlpvim/ctrlp.vim.git'
 # Tree explorer plugin
 bundles[nerdtree]='https://github.com/scrooloose/nerdtree.git'
 # Easily search for, substitute, and abbreviate multiple variants of a word
