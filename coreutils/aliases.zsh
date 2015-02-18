@@ -4,7 +4,8 @@ alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
 alias grep='grep --color=auto'
 alias less='less --ignore-case --RAW-CONTROL-CHARS --jump-target=.5'
 alias ack='ack-grep'
-alias a='ack-grep'
+# use solarized colors for silver-searcher (ag)
+alias a='/usr/bin/ag --color-line-number "0;32" --color-match "46" --color-path "0;35"'
 alias ls='ls --color'
 alias ll='ls -l'
 

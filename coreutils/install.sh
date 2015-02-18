@@ -14,5 +14,5 @@ install_packages() {
   true
 }
 
-install_packages ack-grep colordiff curl terminator vim zsh
+install_packages silver-searcher colordiff curl terminator vim zsh
 
