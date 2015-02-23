@@ -2,9 +2,11 @@
 # Allows using ember-cli without installing npm and bower
 
 ember: &defaults
-  image: geoffreyd/ember-cli
+  image: cbliard/sails-ember-cli
+  environment:
+    - USER_UID=1000
+    - USER_GID=1000
   volumes:
-    - /mnt/docker/my_app:/usr/src/app #if you're using boot2docker
     - .:/usr/src/app #if your on docker actual
 
 server:
@@ -14,11 +16,10 @@ server:
     - 4200:4200
     - 35729:35729
 
-npm:
-  <<: *defaults
-  entrypoint: ['/usr/local/bin/npm']
-
 bower:
   <<: *defaults
-  entrypoint: ['/usr/local/bin/bower', '--allow-root']
+  entrypoint: ['/usr/local/bin/as_user', '/usr/local/bin/bower', '--allow-root']
 
+npm:
+  <<: *defaults
+  entrypoint: ['/usr/local/bin/as_user', '/usr/local/bin/npm']
