@@ -1,0 +1,19 @@
+{
+	// you may set specific environment variables here
+	// e.g "env": { "PATH": "$HOME/go/bin:$PATH" }
+	// in values, $PATH and ${PATH} are replaced with
+	// the corresponding environment(PATH) variable, if it exists.
+	"env": {
+		"GOPATH": "$PROJECTS/Christophe/code/go",
+		"PATH": "$PATH:$GOPATH/bin"
+	},
+
+	// Whether or not gsfmt is enabled
+	"fmt_enabled": true,
+
+	// whether or not to indent with tabs (alignment is always done using spaces)
+	"fmt_tab_indent": true,
+
+	// the assumed width of the tab character (or number of spaces to indent with)
+	"fmt_tab_width": 4
+}
