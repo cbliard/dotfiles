@@ -1,4 +1,7 @@
 {
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AdvancedNewFile",
@@ -9,8 +12,11 @@
 		"GitGutter",
 		"GitHub Flavored Markdown Preview",
 		"Handlebars",
+		"MarkdownEditing",
 		"MultiEditUtils",
 		"Origami",
+		"Package Control",
+		"Pretty JSON",
 		"Puppet",
 		"SideBarEnhancements",
 		"SublimeERB",
@@ -19,6 +25,7 @@
 		"SublimeLinter-contrib-puppet-lint",
 		"SublimeLinter-jshint",
 		"SublimeLinter-ruby",
+		"Theme - Soda",
 		"ToggleQuotes",
 		"WordHighlight"
 	]

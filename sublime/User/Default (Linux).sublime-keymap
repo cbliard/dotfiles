@@ -1,0 +1,12 @@
+[
+  // try to swap paste_and_indent and simple paste key bindings
+  { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+  { "keys": ["ctrl+shift+v"], "command": "paste" },
+
+  // paste from history
+  { "keys": ["ctrl+alt+shift+v"], "command": "paste_from_history" },
+
+  // case conversion plugin
+  { "keys": ["ctrl+k", "ctrl+s"], "command": "convert_to_snake"},
+  { "keys": ["ctrl+k", "ctrl+c"], "command": "convert_to_camel"}
+]
