@@ -6,6 +6,10 @@
   // paste from history
   { "keys": ["ctrl+alt+shift+v"], "command": "paste_from_history" },
 
+  // column selection (some plugin is messing with it, so redefine it)
+  { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
+  { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
+
   // case conversion plugin
   { "keys": ["ctrl+k", "ctrl+s"], "command": "convert_to_snake"},
   { "keys": ["ctrl+k", "ctrl+c"], "command": "convert_to_camel"}
