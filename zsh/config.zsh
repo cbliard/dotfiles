@@ -37,6 +37,7 @@ setopt nomatch  # error if filename pattern has no matches
 setopt notify  # report status of background jobs immediately
 
 unsetopt beep # no beep
+unsetopt histreduceblanks # buggy for me, see thread http://www.zsh.org/mla/users/2013/msg00456.html
 
 # select words as in bash (for Meta-backspace)
 autoload -U select-word-style
