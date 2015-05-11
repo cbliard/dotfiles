@@ -42,14 +42,14 @@
 		".tmp",
 		"coverage"
 	],
-	"font_size": 9,
+	"font_size": 8,
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
-		"Markdown",
 		"Vintage",
-		"CTags"
+		"CTags",
+		"Markdown"
 	],
 	"indent_guide_options":
 	[
