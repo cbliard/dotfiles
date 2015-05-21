@@ -10,6 +10,10 @@
   { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
   { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
 
+  // code folding
+  { "keys": ["ctrl+keypad_minus"], "command": "fold" },
+  { "keys": ["ctrl+keypad_plus"], "command": "unfold" },
+
   // case conversion plugin
   { "keys": ["ctrl+k", "ctrl+s"], "command": "convert_to_snake"},
   { "keys": ["ctrl+k", "ctrl+c"], "command": "convert_to_camel"}
