@@ -51,8 +51,8 @@
 	"ignored_packages":
 	[
 		"CTags",
-		"Vintage",
-		"Markdown"
+		"Markdown",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
