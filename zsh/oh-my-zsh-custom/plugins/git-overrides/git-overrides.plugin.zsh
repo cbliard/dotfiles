@@ -3,6 +3,11 @@
 # Return if not sourced by oh-my-zsh
 [ -n "$ZSH_CUSTOM" ] || return 0
 
+# gdc alias was renamed as gdca, but I prefer the shorter version, even if
+# it conflicts with GCC D compiler.
+# See https://github.com/robbyrussell/oh-my-zsh/pull/3977
+alias gdc='git diff --cached'
+
 # Change git pull and gitpush
 unalias gl &> /dev/null # I often intend to do git log, but does git pull
 compdef -d gl
