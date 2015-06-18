@@ -1,6 +1,4 @@
 {
-	// Complete on complete on tab instead of enter. It removes
-	// ambiguity between committing the completion and inserting a newline.
 	"auto_complete_commit_on_tab": true,
 	"auto_indent": true,
 	"bold_folder_labels": true,
@@ -51,8 +49,8 @@
 	"ignored_packages":
 	[
 		"CTags",
-		"Markdown",
-		"Vintage"
+		"Vintage",
+		"Markdown"
 	],
 	"indent_guide_options":
 	[
