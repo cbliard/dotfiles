@@ -43,10 +43,6 @@ unsetopt histreduceblanks # buggy for me, see thread http://www.zsh.org/mla/user
 autoload -U select-word-style
 select-word-style bash
 
-# don't expand aliases _before_ completion has finished
-#   like: git comm-[tab]
-setopt complete_aliases
-
 zle -N newtab
 
 # Emacs key bindings by default
