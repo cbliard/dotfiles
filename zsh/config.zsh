@@ -55,6 +55,7 @@ bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
+bindkey '^U' backward-kill-line
 
 bindkey ";5C" forward-word  # Ctrl-left
 bindkey ";5D" backward-word  # Ctrl-right
