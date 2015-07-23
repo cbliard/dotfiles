@@ -2,7 +2,7 @@ alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
 alias grep='grep --color=auto'
-alias less='less --ignore-case --RAW-CONTROL-CHARS --jump-target=.5'
+alias less='less --line-numbers --ignore-case --RAW-CONTROL-CHARS --jump-target=.5'
 alias ack='ack-grep'
 # use solarized colors for silver-searcher (ag)
 alias a='/usr/bin/ag --color-line-number "0;32" --color-match "46" --color-path "0;35"'
