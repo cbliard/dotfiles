@@ -10,6 +10,13 @@
   { "keys": ["alt+shift+up"], "command": "select_lines", "args": {"forward": false} },
   { "keys": ["alt+shift+down"], "command": "select_lines", "args": {"forward": true} },
 
+  // go to definition
+  { "keys": ["alt+d"], "command": "goto_definition"},
+
+  // jump back/forward like in a browser
+  { "keys": ["alt+left"], "command": "jump_back" },
+  { "keys": ["alt+right"], "command": "jump_forward" },
+
   // code folding
   { "keys": ["ctrl+keypad_minus"], "command": "fold" },
   { "keys": ["ctrl+keypad_plus"], "command": "unfold" },
