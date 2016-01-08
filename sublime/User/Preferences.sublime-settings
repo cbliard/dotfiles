@@ -3,7 +3,7 @@
 	"auto_indent": true,
 	"bold_folder_labels": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
 	"detect_indentation": true,
 	"ensure_newline_at_eof_on_save": true,
 	"fade_fold_buttons": false,
@@ -40,6 +40,7 @@
 		"CVS",
 		".bundle",
 		"node_modules",
+		"public/assets",
 		"vendor/cache",
 		"tmp",
 		".tmp",
@@ -51,8 +52,8 @@
 	"ignored_packages":
 	[
 		"CTags",
-		"Vintage",
-		"Markdown"
+		"Markdown",
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
