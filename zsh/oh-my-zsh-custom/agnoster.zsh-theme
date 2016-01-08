@@ -22,6 +22,23 @@
 # jobs are running in this shell will all be displayed automatically when
 # appropriate.
 
+autoload -U add-zsh-hook
+
+command_time_preexec() {
+  timer=${time:-$SECONDS}
+}
+command_time_precmd() {
+  if [ $timer ]; then
+    timer_show=$(($SECONDS - $timer))
+    export RPROMPT="%F{cyan}${timer_show}s %{$reset_color%}"
+    unset timer
+  else
+    unset RPROMPT
+  fi
+}
+add-zsh-hook preexec command_time_preexec
+add-zsh-hook precmd command_time_precmd
+
 ### Segment drawing
 # A few utility functions to make it easy and re-usable to draw segmented prompts
 
