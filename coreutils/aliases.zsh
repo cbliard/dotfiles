@@ -15,3 +15,6 @@ alias -g NE="2> /dev/null"
 alias -g NS='| sort -n'
 alias -g S='| sort'
 alias -g X='| xargs'
+alias -g A1='| awk '\''{print $1}'\'
+alias -g A2='| awk '\''{print $2}'\'
+alias -g A3='| awk '\''{print $3}'\'
