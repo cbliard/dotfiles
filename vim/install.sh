@@ -19,7 +19,9 @@ bundles[nerdtree]='https://github.com/scrooloose/nerdtree.git'
 # Coercion: crs => snake_case; crc => camelCase; crm => MixedCase; cru => UPPER_CASE
 bundles[vim-abolish]='https://github.com/tpope/vim-abolish.git'
 # Lean & mean status/tabline for vim that's light as air
-bundles[vim-airline]='https://github.com/bling/vim-airline'
+bundles[vim-airline]='https://github.com/vim-airline/vim-airline'
+# A collection of themes for vim-airline
+bundles[vim-airline-themes]='https://github.com/vim-airline/vim-airline-themes'
 # Solarized color theme
 bundles[vim-colors-solarized]='https://github.com/altercation/vim-colors-solarized.git'
 # Vim motions on speed!

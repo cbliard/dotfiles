@@ -9,10 +9,10 @@ install_packages() {
     fi
   done
   if [ ${#packages[@]} -gt 0 ] ; then
-    sudo apt-get install ${packages[@]}
+    sudo apt-get install -y --no-install-recommends ${packages[@]}
   fi
   true
 }
 
-install_packages silver-searcher colordiff curl terminator vim zsh
+install_packages silversearcher-ag colordiff curl terminator vim zsh
 
