@@ -29,7 +29,8 @@
 		"*.class",
 		"*.psd",
 		"*.db",
-		".scssc"
+		".scssc",
+		"tags"
 	],
 	"folder_exclude_patterns":
 	[
@@ -42,6 +43,7 @@
 		"node_modules",
 		"public/assets",
 		"vendor/cache",
+		"git-ignored",
 		"tmp",
 		".tmp",
 		"coverage"
@@ -65,6 +67,7 @@
 	[
 		80
 	],
+	"save_on_focus_lost": true,
 	"shift_tab_unindent": true,
 	"show_tab_close_buttons": false,
 	"spell_check": false,
