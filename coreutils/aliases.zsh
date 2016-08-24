@@ -18,3 +18,4 @@ alias -g X='| xargs'
 alias -g A1='| awk '\''{print $1}'\'
 alias -g A2='| awk '\''{print $2}'\'
 alias -g A3='| awk '\''{print $3}'\'
+alias -g NC='| sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g"'  # remove color
