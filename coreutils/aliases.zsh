@@ -10,6 +10,8 @@ alias ls='ls --color'
 alias ll='ls -l'
 
 alias -g G='| egrep'
+alias -g H='| head'
+alias -g T='| tail'
 alias -g L='| less'
 alias -g NE="2> /dev/null"
 alias -g NS='| sort -n'
