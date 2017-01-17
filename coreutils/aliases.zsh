@@ -11,6 +11,7 @@ alias ll='ls -l'
 
 alias -g G='| egrep'
 alias -g GI='| egrep -i'
+alias -g B64='| base64 -d'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g L='| less'
