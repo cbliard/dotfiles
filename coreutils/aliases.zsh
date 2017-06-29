@@ -8,6 +8,7 @@ alias ack='ack-grep'
 alias a='/usr/bin/ag --color-line-number "0;32" --color-match "46" --color-path "0;35"'
 alias ls='ls --color'
 alias ll='ls -l'
+alias pandoct='pandoc -t plain'
 
 alias -g G='| egrep'
 alias -g GI='| egrep -i'
@@ -15,6 +16,7 @@ alias -g B64='| base64 -d'
 alias -g H='| head'
 alias -g T='| tail'
 alias -g L='| less'
+alias -g NO="> /dev/null"
 alias -g NE="2> /dev/null"
 alias -g NS='| sort -n'
 alias -g S='| sort'
