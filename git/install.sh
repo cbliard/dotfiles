@@ -6,5 +6,5 @@ git config --global color.diff auto
 git config --global color.status auto
 git config --global color.ui true
 git config --global core.editor vim
-git config --global core.excludesfile ~/.gitignore
+git config --global core.excludesfile $HOME/.gitignore
 git config --global push.default simple

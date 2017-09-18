@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # install pathogen
-if ! [ -e $HOME/.vim/autoload/pathogen.vim ]; then
+if ! [ -e $HOME/.vim/autoload/pathogen.vim ]
+then
   echo "Vim: installing pathogen autoloading"
   mkdir -p $HOME/.vim/autoload
   curl -SLso ~/.vim/autoload/pathogen.vim \
@@ -9,44 +10,47 @@ if ! [ -e $HOME/.vim/autoload/pathogen.vim ]; then
 fi
 
 # install bundles
-declare -A bundles
+bundles=()
 # Full path fuzzy file, buffer, mru, tag, ... finder for Vim.
-bundles[ctrlp]='https://github.com/ctrlpvim/ctrlp.vim.git'
+bundles+=('https://github.com/ctrlpvim/ctrlp.vim.git')
 # Tree explorer plugin
-bundles[nerdtree]='https://github.com/scrooloose/nerdtree.git'
+bundles+=('https://github.com/scrooloose/nerdtree.git')
 # Easily search for, substitute, and abbreviate multiple variants of a word
 # Subvertion: :S/blog{,s}/post{,s}/g => like :s but smarter
 # Coercion: crs => snake_case; crc => camelCase; crm => MixedCase; cru => UPPER_CASE
-bundles[vim-abolish]='https://github.com/tpope/vim-abolish.git'
+bundles+=('https://github.com/tpope/vim-abolish.git')
 # Lean & mean status/tabline for vim that's light as air
-bundles[vim-airline]='https://github.com/vim-airline/vim-airline'
+bundles+=('https://github.com/vim-airline/vim-airline')
 # A collection of themes for vim-airline
-bundles[vim-airline-themes]='https://github.com/vim-airline/vim-airline-themes'
+bundles+=('https://github.com/vim-airline/vim-airline-themes')
 # Solarized color theme
-bundles[vim-colors-solarized]='https://github.com/altercation/vim-colors-solarized.git'
+bundles+=('https://github.com/altercation/vim-colors-solarized.git')
 # Vim motions on speed!
-bundles[vim-easymotion]='https://github.com/Lokaltog/vim-easymotion'
+bundles+=('https://github.com/Lokaltog/vim-easymotion')
 # Awesome git wrapper. :G<command>
-bundles[vim-fugitive]='https://github.com/tpope/vim-fugitive.git'
+bundles+=('https://github.com/tpope/vim-fugitive.git')
 # Shows a git diff in the gutter (sign column) and stages/reverts hunks
-bundles[vim-gitgutter]='https://github.com/airblade/vim-gitgutter.git'
+bundles+=('https://github.com/airblade/vim-gitgutter.git')
 # Enable repeating supported plugin maps with "."
-bundles[vim-repeat]='https://github.com/tpope/vim-repeat.git'
+bundles+=('https://github.com/tpope/vim-repeat.git')
 # Defaults everyone can agree on
-bundles[vim-sensible]='https://github.com/tpope/vim-sensible.git'
+bundles+=('https://github.com/tpope/vim-sensible.git')
 # Heuristically set buffer options
-bundles[vim-sleuth]='https://github.com/tpope/vim-sleuth.git'
+bundles+=('https://github.com/tpope/vim-sleuth.git')
 # Quoting/parenthesizing made simple. cs'": change quotes ' to "
-bundles[vim-surround]='https://github.com/tpope/vim-surround.git'
+bundles+=('https://github.com/tpope/vim-surround.git')
 
 mkdir -p $HOME/.vim/bundle
 cd $HOME/.vim/bundle
-for bundle in "${!bundles[@]}"
+for bundle in "${bundles[@]}"
 do
+  name="${bundle##*/}"
+  name="${name%%.*}"
+
   if ! [ -d $bundle ]
   then
-    echo "Vim: installing bundle $bundle from ${bundles[$bundle]}"
-    git clone --quiet ${bundles[$bundle]} $bundle
+    echo "Vim: installing bundle $name from $bundle"
+    git clone --quiet $bundle $name
   fi
 done
 

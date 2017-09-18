@@ -1,22 +1,13 @@
 #!/bin/bash
 
-packages=()
+lib_dir="$(cd "$(dirname $0)"/../lib && pwd)"
+source "$lib_dir/support.sh"
 
-install_packages() {
-  for package in $* ; do
-    if ! dpkg -s $package &> /dev/null ; then
-      packages+=($package)
-    fi
-  done
-  if [ ${#packages[@]} -gt 0 ] ; then
-    sudo apt-get install ${packages[@]}
-  fi
-  true
-}
+if is_linux
+then
+  install_linux_packages terminator
 
-install_packages terminator
+  SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-PYTHONPATH=/usr/share/terminator python "$SCRIPT_DIR/configure_terminator.py"
-
+  PYTHONPATH=/usr/share/terminator python "$SCRIPT_DIR/configure_terminator.py"
+fi

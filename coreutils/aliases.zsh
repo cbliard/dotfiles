@@ -1,3 +1,6 @@
+lib_dir="$(cd "$(dirname $0)"/../lib && pwd)"
+source "$lib_dir/support.sh"
+
 alias mv='nocorrect mv'       # no spelling correction on mv
 alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
@@ -6,7 +9,12 @@ alias less='less --line-numbers --ignore-case --RAW-CONTROL-CHARS --jump-target=
 alias ack='ack-grep'
 # use solarized colors for silver-searcher (ag)
 alias a='/usr/bin/ag --color-line-number "0;32" --color-match "46" --color-path "0;35"'
-alias ls='ls --color'
+if is_osx
+then
+  alias ls='gls --color'
+else
+  alias ls='ls --color'
+fi
 alias ll='ls -l'
 alias pandoct='pandoc -t plain'
 
