@@ -1,3 +1,4 @@
+##########################
 # Change some aliases from oh-my-zsh git plugin
 
 # Return if not sourced by oh-my-zsh
@@ -23,3 +24,9 @@ alias grm="git status | grep deleted | awk '{\$1=\$2=\"\"; print \$0}' | \
            perl -pe 's/^[ \t]*//' | sed 's/ /\\\\ /g' | xargs git rm"
 # git log diff from last pull
 alias gld='git log --color --reverse --patch --stat --abbrev-commit --date=relative --decorate ORIG_HEAD.. | less --jump-target=0 "+/^commit.*$"'
+
+##########################
+# Change some aliases from oh-my-zsh rails plugin
+
+# This alias rg='rails generate' conflicts with ripgrep tool
+unalias rg

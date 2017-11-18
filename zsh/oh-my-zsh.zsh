@@ -50,9 +50,9 @@ DISABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if is_osx
 then
-  plugins=(docker git git-overrides github vagrant cp rails colorize zsh-syntax-highlighting)
+  plugins=(docker git github vagrant cp rails colorize zsh-syntax-highlighting my-overrides)
 else
-  plugins=(debian docker git git-overrides github vagrant cp rails colorize zsh-syntax-highlighting)
+  plugins=(debian docker git github vagrant cp rails colorize zsh-syntax-highlighting my-overrides)
 fi
 
 source $ZSH/oh-my-zsh.sh
