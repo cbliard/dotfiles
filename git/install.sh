@@ -9,3 +9,6 @@ git config --global core.editor vim
 git config --global core.excludesfile $HOME/.gitignore
 git config --global push.default simple
 git config --global fetch.prune true
+
+# Three ways diff, so we have the common text
+git config --global merge.conflict diff3
