@@ -1,0 +1,15 @@
+{
+  "mode": "patched",
+  "theme": "default",
+  "segments": [
+    "exit_code",
+    "ssh",
+    "cwd",
+    "git",
+    "hg",
+    "database_url",
+    "jobs",
+    "newline",
+    "root"
+  ]
+}
