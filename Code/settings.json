@@ -1,0 +1,55 @@
+{
+  "files.autoSave": "onWindowChange",
+  "workbench.colorTheme": "Monokai",
+  "search.useIgnoreFilesByDefault": true,
+  "search.useIgnoreFiles": true,
+  "workbench.iconTheme": "file-icons",
+  "editor.fontFamily": "Meslo LG M DZ for Powerline, Menlo, Monaco, 'Courier New', monospace",
+  "window.zoomLevel": 0,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "editor.acceptSuggestionOnEnter": "off",
+  // Controls the window title based on the active editor. Variables are substituted based on the context:
+  // ${activeEditorShort}: the file name (e.g. myFile.txt)
+  // ${activeEditorMedium}: the path of the file relative to the workspace folder (e.g. myFolder/myFile.txt)
+  // ${activeEditorLong}: the full path of the file (e.g. /Users/Development/myProject/myFolder/myFile.txt)
+  // ${folderName}: name of the workspace folder the file is contained in (e.g. myFolder)
+  // ${folderPath}: file path of the workspace folder the file is contained in (e.g. /Users/Development/myFolder)
+  // ${rootName}: name of the workspace (e.g. myFolder or myWorkspace)
+  // ${rootPath}: file path of the workspace (e.g. /Users/Development/myWorkspace)
+  // ${appName}: e.g. VS Code
+  // ${dirty}: a dirty indicator if the active editor is dirty
+  // ${separator}: a conditional separator (" - ") that only shows when surrounded by variables with values
+  "window.title": "${activeEditorMedium}${separator}${rootName} ${dirty}",
+  // Render vertical rulers after a certain number of monospace characters. Use multiple values for multiple rulers. No rulers are drawn if array is empty
+  "editor.rulers": [
+    80,
+    120
+  ],
+  // Customize Monokai tab colors
+  "workbench.colorCustomizations": {
+      "tab.inactiveBackground": "#1e1f1c",
+      "tab.activeBackground": "#414339",
+      "tab.border": "#272822"
+  },
+  "gitlens.advanced.messages": {
+    "suppressCommitHasNoPreviousCommitWarning": false,
+    "suppressCommitNotFoundWarning": false,
+    "suppressFileNotUnderSourceControlWarning": false,
+    "suppressGitVersionWarning": false,
+    "suppressLineUncommittedWarning": false,
+    "suppressNoRepositoryWarning": false,
+    "suppressUpdateNotice": false,
+    "suppressWelcomeNotice": true
+  },
+  // Controls if the explorer should automatically reveal and select files when opening them.
+  "explorer.autoReveal": false,
+  "[handlebars]": {
+    "files.insertFinalNewline": false
+  },
+  "workbench.startupEditor": "newUntitledFile"
+}
