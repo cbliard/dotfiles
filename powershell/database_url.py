@@ -9,7 +9,7 @@ class Segment(BasicSegment):
 	def add_to_powerline(self):
 		# See discussion in https://github.com/banga/powerline-shell/pull/204
 		# regarding the directory where battery info is saved
-		if not os.environ.has_key('DATABASE_URL'):
+		if not 'DATABASE_URL' in os.environ:
 			return
 		databaseUrl = os.environ['DATABASE_URL']
 		if not databaseUrl:
