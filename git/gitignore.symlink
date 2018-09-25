@@ -4,5 +4,7 @@
 *.swp
 *.rbc
 *.zzz
+.elixir_ls
+.vscode
 /zzz
 casual_*
