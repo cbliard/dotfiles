@@ -68,12 +68,9 @@ nmap <silent> <A-l> :wincmd l<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" enable The vim-colors-solarized
+" colors everywhere
 syntax enable
-set background=dark
-colorscheme solarized
-call togglebg#map("<F5>")
-"let g:airline_theme = 'solarized'
+colorscheme monokai-soda
 let g:airline_theme = 'luna'
 let g:airline_detect_modified = 1
 let g:airline_enable_branch = 1

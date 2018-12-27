@@ -23,8 +23,6 @@ bundles+=('https://github.com/tpope/vim-abolish.git')
 bundles+=('https://github.com/vim-airline/vim-airline')
 # A collection of themes for vim-airline
 bundles+=('https://github.com/vim-airline/vim-airline-themes')
-# Solarized color theme
-bundles+=('https://github.com/altercation/vim-colors-solarized.git')
 # Vim motions on speed!
 bundles+=('https://github.com/Lokaltog/vim-easymotion')
 # Awesome git wrapper. :G<command>
@@ -53,4 +51,3 @@ do
     git clone --quiet $bundle $name
   fi
 done
-
