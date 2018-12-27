@@ -10,10 +10,8 @@ alias ack='ack-grep'
 # use colors for ls
 if is_osx
 then
-  alias a='ag --color-line-number "0;32" --color-match "46" --color-path "0;35"'
   alias ls='gls --color'
 else
-  alias a='/usr/bin/ag --color-line-number "0;32" --color-match "46" --color-path "0;35"'
   alias ls='ls --color'
 fi
 alias ll='ls -l'
