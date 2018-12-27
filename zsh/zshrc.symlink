@@ -42,3 +42,10 @@ then
 fi
 
 unset config_files
+
+# load rbenv
+if [ -d "$HOME/.rbenv/bin" ]
+then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
