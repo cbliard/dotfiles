@@ -16,6 +16,7 @@ else
 fi
 alias ll='ls -l'
 alias pandoct='pandoc -t plain'
+alias wip="ip a | grep --perl-regexp --color=never --only-matching '192.*(?=/24)'"
 
 alias -g G='| egrep'
 alias -g GI='| egrep -i'
