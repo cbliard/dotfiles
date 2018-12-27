@@ -59,7 +59,9 @@
 	"ignored_packages":
 	[
 		"CTags",
+		"Gitignored File Excluder",
 		"Markdown",
+		"Sass",
 		"Vintage"
 	],
 	"indent_guide_options":
