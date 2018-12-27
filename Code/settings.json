@@ -1,9 +1,8 @@
 {
   "files.autoSave": "onWindowChange",
   "workbench.colorTheme": "Monokai",
-  "search.useIgnoreFilesByDefault": true,
   "search.useIgnoreFiles": true,
-  "workbench.iconTheme": "file-icons",
+  "workbench.iconTheme": null,
   "editor.fontFamily": "Meslo LG M DZ for Powerline, Menlo, Monaco, 'Courier New', monospace",
   "window.zoomLevel": 0,
   "workbench.editor.enablePreviewFromQuickOpen": false,
@@ -43,6 +42,8 @@
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
     "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": true,
+    "suppressShowKeyBindingsNotice": true,
     "suppressUpdateNotice": false,
     "suppressWelcomeNotice": true
   },
@@ -51,5 +52,27 @@
   "[handlebars]": {
     "files.insertFinalNewline": false
   },
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "editor.fontSize": 12,
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  // Specifies whether or not to provide any Git code lens, by default
+  // Use the `Toggle Git Code Lens` command (`gitlens.toggleCodeLens`) to toggle the Git code lens on and off for the current session
+  "gitlens.codeLens.enabled": false,
+  "gitlens.keymap": "chorded",
+  "explorer.confirmDelete": false,
+  "diffEditor.ignoreTrimWhitespace": true,
+  "ruby.lint": {
+    "fasterer": true,
+    "rubocop": {
+      "lint": true,
+      "rails": true
+    },
+    "ruby": {
+      "unicode": true //Runs ruby -wc -Ku
+    }
+  },
+  "gitlens.historyExplorer.enabled": true,
+  "gitlens.blame.heatmap.enabled": true,
+  "gitlens.heatmap.toggleMode": "window"
 }
