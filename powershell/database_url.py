@@ -11,7 +11,7 @@ class Segment(BasicSegment):
 		# regarding the directory where battery info is saved
 		if not 'DATABASE_URL' in os.environ:
 			return
-		databaseUrl = os.environ['DATABASE_URL']
+		databaseUrl = os.getenv('DATABASE_URL')
 		if not databaseUrl:
 			return
 		m = re.search(r"^postgres://([^:@/]+(:[^@/]+)?@)?[^:/]+(:\d+)?/(\w+)$", databaseUrl)
