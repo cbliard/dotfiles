@@ -5,6 +5,7 @@
 *.rbc
 *.zzz
 .elixir_ls
+.mix_tasks
 .vscode
 /zzz
 casual_*
