@@ -3,6 +3,7 @@
 *~
 *.swp
 *.rbc
+.envrc
 *.zzz
 .elixir_ls
 .mix_tasks
