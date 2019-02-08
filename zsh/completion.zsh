@@ -22,7 +22,19 @@ bindkey -M menuselect '^?' undo
 zstyle ':completion:*:descriptions' format '%B%U%d%b%u'
 zstyle ':completion:*' group-name ''
 
-# Meta-S will toggle sudo
+# Alt-E will toggle bundle exec
+function vbe-bundle-exec-command-line() {
+    [[ -z $BUFFER ]] && zle up-history
+    if [[ $BUFFER == bundle\ exec\ * ]]; then
+        LBUFFER="${LBUFFER#bundle exec }"
+    else
+        LBUFFER="bundle exec $LBUFFER"
+    fi
+}
+zle -N vbe-bundle-exec-command-line
+bindkey "\ee" vbe-bundle-exec-command-line
+
+# Alt-S will toggle sudo
 function vbe-sudo-command-line() {
     [[ -z $BUFFER ]] && zle up-history
     if [[ $BUFFER == sudo\ * ]]; then
