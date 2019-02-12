@@ -3,6 +3,7 @@
   "theme": "default",
   "segments": [
     "exit_code",
+    "time",
     "database_url",
     "ssh",
     "cwd",
