@@ -22,6 +22,18 @@ bindkey -M menuselect '^?' undo
 zstyle ':completion:*:descriptions' format '%B%U%d%b%u'
 zstyle ':completion:*' group-name ''
 
+# Alt-I will toggle bundle exec
+function vbe-add-bin-command-line() {
+    [[ -z $BUFFER ]] && zle up-history
+    if [[ $BUFFER == bin/* ]]; then
+        LBUFFER="${LBUFFER#bin/}"
+    else
+        LBUFFER="bin/$LBUFFER"
+    fi
+}
+zle -N vbe-add-bin-command-line
+bindkey "\ei" vbe-add-bin-command-line
+
 # Alt-E will toggle bundle exec
 function vbe-bundle-exec-command-line() {
     [[ -z $BUFFER ]] && zle up-history
