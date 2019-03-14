@@ -6,3 +6,5 @@ then
   alias git=$hub_path
 fi
 
+alias gsta='git stash push'
+
