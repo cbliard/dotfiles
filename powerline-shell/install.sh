@@ -2,27 +2,17 @@
 
 set -u
 
-pip3 install powerline-shell
+lib_dir="$(cd "$(dirname $0)"/../lib && pwd)"
+source "$lib_dir/support.sh"
 
-for p in \
-  "/usr/local/lib/python2.7/site-packages/powerline_shell/segments" \
-  "/usr/local/lib/python3.6/site-packages/powerline_shell/segments" \
-  "/usr/local/lib/python3.7/site-packages/powerline_shell/segments" \
-  "$HOME/.local/lib/python2.7/site-packages/powerline_shell/segments" \
-  "$HOME/.local/lib/python3.6/site-packages/powerline_shell/segments" \
-  "$HOME/.local/lib/python3.7/site-packages/powerline_shell/segments"
-do
-  if [ -d "$p" -a -w "$p" ]
-  then
-    # OSX cp does not support --verbose, only -v
-    cp -v database_url.py "$p"
-    echo "database_url segment copied!"
-    copied=1
-  fi
-done
-
-if [ -z "$copied" ]
+if is_linux
 then
-  echo "WARNING! powerline-shell is not fully installed."
-  echo "Could not copy database_url.py segment to powerline dir."
+  release_name='powerline-go-linux-amd64'
+else
+  release_name='powerline-go-darwin-amd64'
 fi
+version='v1.13.0'
+
+mkdir -p $HOME/bin
+curl -sSL -o $HOME/bin/powerline-go "https://github.com/justjanne/powerline-go/releases/download/${version}/${release_name}"
+chmod +x $HOME/bin/powerline-go
