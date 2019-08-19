@@ -18,8 +18,14 @@ then
   then
     install_osx_packages direnv
   else
-    curl -SsL -o "$bin_dir/direnv" https://github.com/zimbatm/direnv/releases/download/v2.6.0/direnv.linux-amd64
-    chmod +x "$bin_dir/direnv"
+    curl -SsL -o "$bin_dir/direnv" https://github.com/direnv/direnv/releases/download/v2.20.0/direnv.linux-amd64
+    if file "$bin_dir/direnv" | grep -q ELF
+    then
+      chmod +x "$bin_dir/direnv"
+    else
+      mv "$bin_dir/direnv" "$bin_dir/direnv.bad"
+      echo "ERROR: download of direnv binary failed. Has been downloaded to $bin_dir/direnv.bad so you can check what is wrong"
+    fi
   fi
 fi
 true
