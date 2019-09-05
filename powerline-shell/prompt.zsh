@@ -14,7 +14,7 @@ function powerline_precmd() {
     local __ERT=$EPOCHREALTIME
     __DURATION="$(($__ERT - ${__TIMER:-__ERT}))"
   fi
-  PS1="$($HOME/bin/powerline-go -modules 'exit,duration,time,nix-shell,venv,user,host,ssh,cwd,perms,git,jobs,newline,root,vgo' -duration $__DURATION -error $__ERRCODE -shell zsh)"
+  PS1="$($HOME/bin/powerline-go -modules 'exit,duration,time,nix-shell,venv,user,host,ssh,newline,cwd,perms,git,jobs,newline,root,vgo' -duration $__DURATION -error $__ERRCODE -shell zsh)"
 }
 
 function install_powerline_precmd() {
