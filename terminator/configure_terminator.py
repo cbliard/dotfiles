@@ -15,9 +15,17 @@ config.options_set(opts)
 
 # misc options
 config['word_chars'] = '-A-Za-z0-9,./?%&_~'
+config['scrollback_infinite'] = True
 config['scrollback_lines'] = 500000
 config['scroll_on_output'] = False
 config['use_system_font'] = False
-config['font'] = 'Ubuntu Mono 9'
+config['font'] = 'Meslo LG S for Powerline 9'
+
+# editor plugin configuration
+if not 'EditorPlugin' in config['enabled_plugins']:
+    config['enabled_plugins'].insert(0, 'EditorPlugin')
+config.plugin_set('EditorPlugin', 'command', r'code --goto {filepath}:{line}:{column}')
+config.plugin_set('EditorPlugin', 'groups', 'file line column')
+config.plugin_set('EditorPlugin', 'match', r'([^ \t\n\r\f\v:]+?):([0-9]+):?([0-9]+)?')
 
 config.save()
