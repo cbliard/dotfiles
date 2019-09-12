@@ -9,6 +9,7 @@ git config --global core.editor vim
 git config --global core.excludesfile $HOME/.gitignore
 git config --global fetch.prune true
 git config --global log.abbrevCommit true
+git config --global pull.rebase true
 git config --global push.default simple
 
 # Three ways diff, so we have the common text
