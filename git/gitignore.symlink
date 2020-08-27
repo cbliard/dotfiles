@@ -10,3 +10,4 @@
 .vscode
 /zzz
 casual_*
+*.code-workspace
