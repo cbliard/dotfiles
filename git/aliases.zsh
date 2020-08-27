@@ -1,5 +1,7 @@
 alias gsta='git stash push'
-alias gdb='git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d'
+alias gdb='git branch --merged | egrep -v "(^\*|master|main)" | xargs git branch -d'
+alias gcm='git checkout main'
+alias gsm='git switch main'
 
 gt () {
   TOTAL_COL=$(tput cols)
