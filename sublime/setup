@@ -1,9 +1,0 @@
-#!/bin/sh
-# Setup a machine for Sublime Text 2
-set -e
-
-# symlink settings in
-sublime_dir="$HOME/.config/sublime-text-3/Packages"
-mv "$sublime_dir/User" "$sublime_dir/User.backup"
-ln -s "$DOTFILES/sublime/User" "$sublime_dir"
-
