@@ -49,7 +49,7 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(docker kubectl git cp colorize mix-fast rbenv my-overrides aws)
+plugins=(asdf direnv docker kubectl git cp colorize mix-fast my-overrides aws)
 if is_linux
 then
   plugins+=(debian)
