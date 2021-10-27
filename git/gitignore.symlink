@@ -11,3 +11,5 @@
 /zzz
 casual_*
 *.code-workspace
+
+.devcontainer
