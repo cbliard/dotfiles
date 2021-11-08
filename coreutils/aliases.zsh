@@ -6,13 +6,13 @@ alias cp='nocorrect cp'       # no spelling correction on cp
 alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
 alias grep='grep --color=auto'
 alias less='less --line-numbers --ignore-case --RAW-CONTROL-CHARS --jump-target=.5'
-alias ack='ack-grep'
 # use colors for ls
-if is_osx
+eval $(dircolors "$lib_dir/../coreutils/LS_COLORS")
+if (( ${+commands[gls]} ))
 then
-  alias ls='gls --color'
+  alias ls='gls --color=auto -F'
 else
-  alias ls='ls --color'
+  alias ls='ls --color=auto -F'
 fi
 alias ll='ls -l'
 alias pandoct='pandoc -t plain'
