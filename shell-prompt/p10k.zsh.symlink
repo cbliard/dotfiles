@@ -35,6 +35,7 @@
     # os_icon                 # os identifier
     dir                     # current directory
     vcs                     # git status
+    vcs_warn_missing_author # display warning if unset author
     # =========================[ Line #2 ]=========================
     newline                 # \n
     status                  # exit code of the last command
@@ -1578,6 +1579,13 @@
   # User-defined prompt segments can be customized the same way as built-in segments.
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
   # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
+
+  # custom made
+  function prompt_vcs_warn_missing_author() {
+    if git rev-parse --git-dir &> /dev/null && ! git config user.email > /dev/null; then
+      p10k segment -f 208 -i '👤' -t 'missing git author.email'
+    fi
+  }
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
   # when accepting a command line. Supported values:
