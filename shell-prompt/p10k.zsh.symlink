@@ -1582,8 +1582,11 @@
 
   # custom made
   function prompt_vcs_warn_missing_author() {
-    if [ -z "$(git config user.email 2> /dev/null)" ]; then
-      p10k segment -f 208 -i '👤' -t 'missing git author.email'
+    local git_dir=((../)#.git(NY1:a))
+    if [ -n "${git_dir}" ]; then
+      if [ -z "$(git config user.email 2> /dev/null)" ]; then
+        p10k segment -f 208 -i '👤' -t 'missing git user.email'
+      fi
     fi
   }
 
