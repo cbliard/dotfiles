@@ -85,6 +85,7 @@ export FZF_DEFAULT_OPTS="--layout=reverse --no-mouse --height 50% --select-1 --m
 export FZF_CTRL_T_COMMAND="fd --no-ignore-vcs $FD_OPTIONS"
 export FZF_ALT_C_COMMAND="fd --no-ignore-vcs --type d $FD_OPTIONS"
 export BAT_PAGER='less -R'
+export EDITOR=code
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
