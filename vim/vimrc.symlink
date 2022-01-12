@@ -70,7 +70,7 @@ let g:ctrlp_cmd = 'CtrlP'
 
 " colors everywhere
 syntax enable
-colorscheme monokai-soda
+colorscheme monokai2
 let g:airline_theme = 'luna'
 let g:airline_detect_modified = 1
 let g:airline_enable_branch = 1

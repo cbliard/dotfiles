@@ -37,6 +37,8 @@ bundles+=('https://github.com/tpope/vim-sensible.git')
 bundles+=('https://github.com/tpope/vim-sleuth.git')
 # Quoting/parenthesizing made simple. cs'": change quotes ' to "
 bundles+=('https://github.com/tpope/vim-surround.git')
+# color theme
+bundles+=('https://github.com/kajamite/vim-monokai2.git')
 
 mkdir -p $HOME/.vim/bundle
 cd $HOME/.vim/bundle
@@ -45,7 +47,7 @@ do
   name="${bundle##*/}"
   name="${name%%.*}"
 
-  if ! [ -d $bundle ]
+  if ! [ -d $name ]
   then
     echo "Vim: installing bundle $name from $bundle"
     git clone --quiet $bundle $name
