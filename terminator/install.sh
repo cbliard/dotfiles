@@ -12,5 +12,5 @@ then
   mkdir -p "$HOME/.config/terminator/plugins"
   cp "$SCRIPT_DIR/editor_plugin.py" "$HOME/.config/terminator/plugins"
 
-  PYTHONPATH=/usr/share/terminator python "$SCRIPT_DIR/configure_terminator.py"
+  PYTHONPATH=/usr/share/terminator python3 "$SCRIPT_DIR/configure_terminator.py"
 fi
