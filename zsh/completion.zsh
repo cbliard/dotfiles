@@ -5,6 +5,9 @@ zstyle ':completion:*' insert-tab pending
 # color partial tab completion to highlight the next character
 zstyle -e ':completion:*:default' list-colors 'reply=("${PREFIX:+=(#bi)($PREFIX:t)(?)*==00=36}:${(s.:.)LS_COLORS}")';
 
+# add zsh-completions additional completion definitions
+fpath+=$DOTFILES/zsh/oh-my-zsh-custom/plugins/zsh-completions/src
+
 # Taken from https://github.com/miohtama/ztanesh/blob/master/zsh-scripts/rc/90-keybindings
 # Select directory and open a ZSH tab completer
 # http://zsh.sourceforge.net/Guide/zshguide06.html#l149
@@ -22,7 +25,7 @@ bindkey -M menuselect '^?' undo
 zstyle ':completion:*:descriptions' format '%B%U%d%b%u'
 zstyle ':completion:*' group-name ''
 
-# Alt-I will toggle bundle exec
+# Alt-I will toggle bin/
 function vbe-add-bin-command-line() {
     [[ -z $BUFFER ]] && zle up-history
     if [[ $BUFFER == bin/* ]]; then

@@ -1,11 +1,2 @@
-sublime/User/Color\ Highlighter/
-sublime/User/GoSublime/linux-x64
-sublime/User/Package\ Control.last-run
-sublime/User/Package\ Control.ca-list
-sublime/User/Package\ Control.ca-bundle
-sublime/User/Package\ Control.system-ca-bundle
-sublime/User/Package\ Control.merged-ca-bundle
-sublime/User/Package\ Control.cache/
-sublime/User/Package\ Control.ca-certs/
-sublime/User/bh_unicode_properties.cache
 git/gitconfig.symlink
+zsh/oh-my-zsh-custom/plugins/zsh-completions
