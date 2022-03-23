@@ -12,6 +12,12 @@ fi
 # shortcut to this dotfiles path is $DOTFILES
 export DOTFILES=$HOME/.dotfiles
 
+# add zsh-completions additional completion definitions
+# not sure it is correctly loaded...
+if [ -d "$DOTFILES/zsh/oh-my-zsh-custom/plugins/zsh-completions/src" ]; then
+  FPATH=$DOTFILES/zsh/oh-my-zsh-custom/plugins/zsh-completions/src:$FPATH
+fi
+
 # your project folder that we can `c [tab]` to
 if [ -d "$HOME/Christophe" ]; then
   export PROJECTS=$HOME/Christophe/code
@@ -48,17 +54,17 @@ done
 # - 'N' makes the glob pattern evaluate to nothing when it doesn't match (rather than throw a globbing error)
 # - '.' matches "regular files"
 # - 'mh+24' matches files (or directories or whatever) that are older than 24 hours.
-autoload -Uz compinit
+# autoload -Uz compinit
 # Save the location of the current completion dump file.
-if [ -z "$ZSH_COMPDUMP" ]; then
-  ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
-fi
-if [[ -n "${ZSH_COMPDUMP}"(#qN.mh+24) ]]; then
-  compinit
-  compdump
-else
-  compinit -C
-fi;
+# if [ -z "$ZSH_COMPDUMP" ]; then
+#   ZSH_COMPDUMP="${ZDOTDIR:-${HOME}}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
+# fi
+# if [[ -n "${ZSH_COMPDUMP}"(#qN.mh+24) ]]; then
+#   # compinit
+#   # compdump
+# else
+#   # compinit -C
+# fi
 # end code from gist
 
 # load every completion after autocomplete loads
