@@ -28,7 +28,8 @@ config.plugin_set('EditorPlugin', 'command', r'code --goto {filepath}:{line}:{co
 config.plugin_set('EditorPlugin', 'groups', 'file line column')
 # previous regexp was config.plugin_set('EditorPlugin', 'match', r'([^ \t\n\r\f\v:]+?):([0-9]+):?([0-9]+)?')
 # new one is /(?:[ab]\/)?((?:[^'"\[ \t\n\r\f\v:]+[\/\.])+[a-zA-Z_]+)(?::([0-9]+))?(?::([0-9]+))?/gm
+# new one is /(?:[ab]\/)?((?:[~\/.a-zA-Z0-9_\-^]+[\/\.])+[a-zA-Z_-]+)(?::([0-9]+))?(?::([0-9]+))?/gm
 # able to match files without line number, and the a//some/file/path displayed in git diffs
-config.plugin_set('EditorPlugin', 'match', r'(?:[ab]\/)?((?:[^\'"\[ \t\n\r\f\v:]+[\/\.])+[a-zA-Z_-]+)(?::([0-9]+))?(?::([0-9]+))?')
+config.plugin_set('EditorPlugin', 'match', r'(?:[ab]\/)?((?:[~\/.a-zA-Z0-9_\-^]+[\/\.])+[a-zA-Z_-]+)(?::([0-9]+))?(?::([0-9]+))?')
 
 config.save()

@@ -74,7 +74,7 @@ class EditorPlugin(plugin.URLHandler):
 
         for group_value, group_name in zip(groups, group_names):
             if group_name == 'file':
-                filepath = os.path.join(self.get_cwd(), group_value)
+                filepath = os.path.join(self.get_cwd(), os.path.expanduser(group_value))
                 if not os.path.exists(filepath):
                     filepath = None
             elif group_name == 'line':
