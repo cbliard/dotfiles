@@ -30,6 +30,6 @@ config.plugin_set('EditorPlugin', 'groups', 'file line column')
 # new one is /(?:[ab]\/)?((?:[^'"\[ \t\n\r\f\v:]+[\/\.])+[a-zA-Z_]+)(?::([0-9]+))?(?::([0-9]+))?/gm
 # new one is /(?:[ab]\/)?((?:[~\/.a-zA-Z0-9_\-^]+[\/\.])+[a-zA-Z_-]+)(?::([0-9]+))?(?::([0-9]+))?/gm
 # able to match files without line number, and the a//some/file/path displayed in git diffs
-config.plugin_set('EditorPlugin', 'match', r'(?:[ab]\/)?((?:[~\/.a-zA-Z0-9_\-^]+[\/\.])+[a-zA-Z_-]+)(?::([0-9]+))?(?::([0-9]+))?')
+config.plugin_set('EditorPlugin', 'match', r'(?:[ab]\/)?((?:[~\/.a-zA-Z0-9_\-^]+[\/\.])+[a-zA-Z0-9_-]+)(?::([0-9]+))?(?::([0-9]+))?')
 
 config.save()
