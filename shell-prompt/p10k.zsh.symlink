@@ -36,6 +36,7 @@
     dir                     # current directory
     vcs                     # git status
     vcs_warn_missing_author # display warning if unset author, custom
+    convox_env              # display convox environment being used, custom
     # =========================[ Line #2 ]=========================
     newline                 # \n
     status                  # exit code of the last command
@@ -1683,6 +1684,43 @@
         p10k segment -f 208 -i '👤' -t 'missing git user.email'
       fi
     fi
+  }
+
+  # custom made
+  function prompt_convox_env() {
+    if ! convox_alias=$(alias convox); then
+      # no convox alias defined
+      return
+    fi
+
+    # Run this to see color codes:
+    # for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
+    case $convox_alias in
+      *-edge)
+        color=082 # green
+        icon='🟩'
+        ;;
+      *-stage)
+        color=214 # yellow
+        icon='🟨'
+        ;;
+      *-prod)
+        color=196 # red
+        icon='🟥'
+        ;;
+      *-bahn)
+        color=207 # purple
+        icon='🟪'
+        ;;
+      *)
+        color=254 # light gray
+        icon='⬜'
+        ;;
+    esac
+
+    text="${convox_alias##convox=}"
+
+    p10k segment -f $color -i "$icon" -t "$text"
   }
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
