@@ -37,6 +37,7 @@
     vcs                     # git status
     vcs_warn_missing_author # display warning if unset author, custom
     convox_env              # display convox environment being used, custom
+    database_url            # display DATABASE_URL value if set, custom
     # =========================[ Line #2 ]=========================
     newline                 # \n
     status                  # exit code of the last command
@@ -1721,6 +1722,18 @@
     text="${convox_alias##convox=}"
 
     p10k segment -f $color -i "$icon" -t "$text"
+  }
+
+  # custom made
+  function prompt_database_url() {
+    if [ -z "$DATABASE_URL" ]; then
+      # DATABASE_URL not set
+      return
+    fi
+
+    local redacted=$(echo ${DATABASE_URL} | sed -r 's|:[^/]+@|:x@|')
+
+    p10k segment -f 207 -i "" -t "${redacted}"
   }
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
