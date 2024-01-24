@@ -2,7 +2,9 @@
 .svn
 *~
 *.swp
+*.backup
 *.rbc
+.env.*.local
 .envrc
 *.zzz
 .elixir_ls
@@ -13,3 +15,14 @@ casual_*
 *.code-workspace
 
 .devcontainer
+.tool-versions
+
+.yardoc
+doc
+
+# custom files only for me
+dirty-rubocop
+.rubocop-local.yml
+.overmind.public.env
+.overmind.dev.env
+Procfile.dev.public
