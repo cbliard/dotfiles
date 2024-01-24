@@ -1,5 +1,7 @@
 #!/bin/bash
 
+install_osx_packages diff-so-fancy
+
 git config --global user.name "Christophe Bliard"
 git config --global color.branch auto
 git config --global color.diff auto
