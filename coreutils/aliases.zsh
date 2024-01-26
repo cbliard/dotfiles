@@ -22,6 +22,19 @@ if (( ${+commands[fdfind]} ))
 then
   alias fd=fdfind
 fi
+if (( ${+commands[ghead]} ))
+then
+  # prefer gnu variants of tail and head
+  # `ghead file.txt -n 10` works while macos `head file.txt -n 10` does not (should be `head -n 10 file.txt`)
+  alias head='ghead'
+  alias tail='gtail'
+fi
+if (( ${+commands[grm]} ))
+then
+  # prefer gnu variants of tail and head
+  # `grm somedir/ -rf` works while macos `rm somedir/ -rf` does not (should be `rm -rf somedir/`)
+  alias rm='grm'
+fi
 
 alias -g G='| egrep'
 alias -g GI='| egrep -i'
