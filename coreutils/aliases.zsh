@@ -31,9 +31,9 @@ then
 fi
 if (( ${+commands[grm]} ))
 then
-  # prefer gnu variants of tail and head
+  # prefer gnu variant of rm
   # `grm somedir/ -rf` works while macos `rm somedir/ -rf` does not (should be `rm -rf somedir/`)
-  alias rm='grm'
+  alias rm='/opt/homebrew/bin/grm'
 fi
 
 alias -g G='| egrep'
