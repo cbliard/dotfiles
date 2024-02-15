@@ -14,6 +14,12 @@ git config --global log.abbrevCommit true
 git config --global pull.rebase true
 git config --global push.default simple
 
+# Added after seeing "So you think you know git" FOSDEM 2024 talk
+# (https://www.youtube.com/watch?v=aolI_Rz0ZqY)
+git config --global rerere.enabled true
+git config --global column.ui auto
+git config --global branch.sort -committerdate
+
 # Three ways diff, so we have the common text
 git config --global merge.conflict diff3
 
