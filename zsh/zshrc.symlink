@@ -89,8 +89,14 @@ unset config_files
 export FD_OPTIONS="--follow --exclude .git --exclude node_modules"
 export PREVIOUS_FZF_DEFAULT_OPTS="--layout=reverse --no-mouse --height 50% --multi --info=inline --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || (bat --style=numbers --color=always {} || cat {}) 2> /dev/null | head -300' --preview-window='right:wrap' --bind='ctrl-e:toggle-preview,ctrl-l:execute(bat --style=numbers {} || less -f {}),ctrl-a:select-all+accept,ctrl-y:execute-silent(echo {+} | xclip -selection clipboard)'"
 export FZF_DEFAULT_OPTS="--layout=reverse --no-mouse --height 50% --multi --info=inline --preview='[[ \$(file --mime {}) =~ binary ]] && echo {} is a binary file || bat --style=numbers --color=always {} | trim_comments | head -300' --preview-window='right:wrap' --bind='ctrl-e:toggle-preview,ctrl-l:execute(bat --style=numbers {}),ctrl-a:select-all+accept,ctrl-y:execute-silent(echo {+} | xclip -selection clipboard)'"
-export FZF_CTRL_T_COMMAND="fdfind --no-ignore-vcs $FD_OPTIONS"
-export FZF_ALT_C_COMMAND="fdfind --no-ignore-vcs --type d $FD_OPTIONS"
+if (( ${+commands[fdfind]} ))
+then
+  export FZF_CTRL_T_COMMAND="fdfind --no-ignore-vcs $FD_OPTIONS"
+  export FZF_ALT_C_COMMAND="fdfind --no-ignore-vcs --type d $FD_OPTIONS"
+else
+  export FZF_CTRL_T_COMMAND="fd --no-ignore-vcs $FD_OPTIONS"
+  export FZF_ALT_C_COMMAND="fd --no-ignore-vcs --type d $FD_OPTIONS"
+fi
 export BAT_PAGER='less -R'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
