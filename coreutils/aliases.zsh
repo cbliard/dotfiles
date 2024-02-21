@@ -35,6 +35,10 @@ then
   # `grm somedir/ -rf` works while macos `rm somedir/ -rf` does not (should be `rm -rf somedir/`)
   alias rm='/opt/homebrew/bin/grm'
 fi
+if (( ${+commands[prettyping]} ))
+then
+  alias ping='prettyping --nolegend'
+fi
 
 alias -g G='| egrep'
 alias -g GI='| egrep -i'
