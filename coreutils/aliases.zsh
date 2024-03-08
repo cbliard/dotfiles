@@ -16,6 +16,7 @@ else
   alias ls='ls --color=auto -F'
 fi
 alias ll='ls -l'
+alias rg='rg --vimgrep'
 alias pandoct='pandoc -t plain'
 alias wip="ip a | grep --perl-regexp --color=never --only-matching '192.*(?=/24)'"
 if (( ${+commands[fdfind]} ))
