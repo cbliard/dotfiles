@@ -9,3 +9,7 @@ if [ ! -d "$DOTFILES/zsh/oh-my-zsh-custom/plugins/zsh-completions" ]
 then
   git clone https://github.com/zsh-users/zsh-completions "$DOTFILES/zsh/oh-my-zsh-custom/plugins/zsh-completions"
 fi
+
+current_dir="$(cd "$(dirname $0)" && pwd)"
+mkdir -p ~/bin
+cp "$current_dir/trim_comments" ~/bin/trim_comments
