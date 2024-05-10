@@ -20,6 +20,10 @@ git config --global rerere.enabled true
 git config --global column.ui auto
 git config --global branch.sort -committerdate
 
+# Added after seeing "So you think you know git part 2" DevWorld 2024 talk
+# (https://www.youtube.com/watch?v=Md44rcw13k4)
+git config --global rebase.updateRefs true
+
 # Three ways diff, so we have the common text
 git config --global merge.conflict diff3
 
