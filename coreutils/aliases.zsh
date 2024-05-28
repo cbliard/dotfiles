@@ -7,6 +7,9 @@ alias mkdir='nocorrect mkdir' # no spelling correction on mkdir
 alias grep='grep --color=auto'
 alias less='less --line-numbers --ignore-case --RAW-CONTROL-CHARS --jump-target=.5'
 # use colors for ls
+if (( ${+commands[dircolors]} )) then
+  eval $(dircolors "$lib_dir/../coreutils/LS_COLORS")
+fi
 if (( ${+commands[gls]} ))
 then
   eval $(gdircolors "$lib_dir/../coreutils/LS_COLORS")
