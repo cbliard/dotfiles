@@ -53,7 +53,8 @@
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
-    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+    # asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+    mise                    # mise version manager (https://mise.jdx.dev/)
     # virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
     # anaconda                # conda environment (https://conda.io/)
     # pyenv                   # python environment (https://github.com/pyenv/pyenv)
@@ -1735,6 +1736,39 @@
 
     p10k segment -f 207 -i "" -t "${redacted}"
   }
+
+  # Powerlevel10k prompt segments for mise
+  # [Feature request: add segment for mise](https://github.com/romkatv/powerlevel10k/issues/2212)
+  function prompt_mise() {
+    local plugins=("${(@f)$(mise ls --current 2>/dev/null | awk '!/\(symlink\)/ && $3!="~/.tool-versions" && $3!="~/.config/mise/config.toml" {print $1, $2}')}")
+    local plugin
+    for plugin in ${(k)plugins}; do
+      local parts=("${(@s/ /)plugin}")
+      local tool=${(U)parts[1]}
+      local version=${parts[2]}
+      p10k segment -r -i "${tool}_ICON" -s $tool -t "$version"
+    done
+  }
+
+  # Colors copied over from asdf
+  typeset -g POWERLEVEL9K_MISE_FOREGROUND=66
+
+  typeset -g POWERLEVEL9K_MISE_DOTNET_CORE_FOREGROUND=134
+  typeset -g POWERLEVEL9K_MISE_ELIXIR_FOREGROUND=129
+  typeset -g POWERLEVEL9K_MISE_ERLANG_FOREGROUND=125
+  typeset -g POWERLEVEL9K_MISE_FLUTTER_FOREGROUND=38
+  typeset -g POWERLEVEL9K_MISE_GOLANG_FOREGROUND=37
+  typeset -g POWERLEVEL9K_MISE_HASKELL_FOREGROUND=172
+  typeset -g POWERLEVEL9K_MISE_JAVA_FOREGROUND=32
+  typeset -g POWERLEVEL9K_MISE_JULIA_FOREGROUND=70
+  typeset -g POWERLEVEL9K_MISE_LUA_FOREGROUND=32
+  typeset -g POWERLEVEL9K_MISE_NODE_FOREGROUND=70
+  typeset -g POWERLEVEL9K_MISE_PERL_FOREGROUND=67
+  typeset -g POWERLEVEL9K_MISE_PHP_FOREGROUND=99
+  typeset -g POWERLEVEL9K_MISE_POSTGRES_FOREGROUND=31
+  typeset -g POWERLEVEL9K_MISE_PYTHON_FOREGROUND=37
+  typeset -g POWERLEVEL9K_MISE_RUBY_FOREGROUND=168
+  typeset -g POWERLEVEL9K_MISE_RUST_FOREGROUND=37
 
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
   # when accepting a command line. Supported values:
