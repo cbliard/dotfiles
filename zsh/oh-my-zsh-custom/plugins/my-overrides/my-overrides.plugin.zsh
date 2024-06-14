@@ -29,4 +29,5 @@ alias gld='git log --color --reverse --patch --stat --abbrev-commit --date=relat
 # Change some aliases from oh-my-zsh rails plugin
 
 # This alias rg='rails generate' conflicts with ripgrep tool
-unalias rg &> /dev/null || true
+# It's ok now as I redefined the alias to 'rg --vimgrep'
+# unalias rg &> /dev/null || true
