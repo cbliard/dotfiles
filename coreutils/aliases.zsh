@@ -44,6 +44,7 @@ then
   alias ping='prettyping --nolegend'
 fi
 
+alias -g C='| cat'
 alias -g G='| egrep'
 alias -g GI='| egrep -i'
 alias -g B64='| base64 -d'
