@@ -1,4 +1,5 @@
 #!/usr/bin/ruby
+require 'irb/command'
 require 'irb/completion'
 require 'rubygems'
 
@@ -39,3 +40,64 @@ end
 def r
   reload!
 end
+
+
+module IRB
+  class CodeCommand < IRB::Command::Base
+    category 'Awesomeness'
+    description 'Opens the editor with temp file which is evaluated in context on every save'
+
+    def execute(arg)
+      require 'listen'
+      require 'shellwords'
+      require 'benchmark'
+
+      Dir.mktmpdir do |dir|
+        path = File.join(dir, 'code.rb')
+
+        listener = Listen.to(dir) do
+          tms = Benchmark.measure do
+            irb_context.workspace.binding.eval(File.read(path))
+          end
+
+          puts Color.colorize(tms, [:BOLD])
+        end
+
+        begin
+          listener.start
+
+          unless system("code #{path.shellescape}")
+            fail "failed to open using #{ENV['EDITOR']}"
+          end
+        ensure
+          listener.stop
+        end
+      end
+    end
+  end
+
+  module Command
+    class N < DebugCommand
+      def execute(arg)
+        execute_debug_command(do_cmds: "next #{arg}")
+      end
+    end
+
+    class S < DebugCommand
+      def execute(arg)
+        execute_debug_command(do_cmds: "step #{arg}")
+      end
+    end
+
+    class Up < DebugCommand
+      def execute(arg)
+        execute_debug_command(do_cmds: "up #{arg}")
+      end
+    end
+  end
+end
+
+IRB::Command.register(:n, IRB::Command::N)
+IRB::Command.register(:s, IRB::Command::S)
+IRB::Command.register(:up, IRB::Command::Up)
+IRB::Command.register(:code, IRB::CodeCommand)
