@@ -91,7 +91,7 @@ module IRB
 
     class Up < DebugCommand
       def execute(arg)
-        execute_debug_command(do_cmds: "up #{arg}")
+        execute_debug_command(pre_cmds: "up #{arg}")
       end
     end
   end
