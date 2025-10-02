@@ -101,3 +101,15 @@ IRB::Command.register(:n, IRB::Command::N)
 IRB::Command.register(:s, IRB::Command::S)
 IRB::Command.register(:up, IRB::Command::Up)
 IRB::Command.register(:code, IRB::CodeCommand)
+
+# display line numbers in a vimgrep fashion
+module IRB
+  module VimGrepLike
+    def code_around_binding
+      result = super
+      result&.sub(" @ line ", ":")
+    end
+  end
+end
+
+IRB::WorkSpace.prepend(IRB::VimGrepLike)
