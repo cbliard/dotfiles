@@ -1,0 +1,4 @@
+#compdef r
+
+# Use the rspec completion for r
+_arguments '*: :_rspec'

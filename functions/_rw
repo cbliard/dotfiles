@@ -1,0 +1,8 @@
+#compdef rw
+
+function _rw() {
+  # Use the rspec completion function
+  _rspec "$@"
+}
+
+_rw
