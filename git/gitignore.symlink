@@ -18,11 +18,19 @@ casual_*
 .tool-versions
 
 .yardoc
-doc
 
-# custom files only for me
+### custom files only for me
+
 dirty-rubocop
 .rubocop-local.yml
 .overmind.public.env
 .overmind.dev.env
 Procfile.dev.public
+# custom favicons
+favicon-*.ico
+
+# Cursor rules
+.cursor
+
+# history files
+.irb_history
