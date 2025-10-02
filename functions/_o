@@ -1,0 +1,57 @@
+#compdef o
+_o() {
+  local base_path=${OPENPROJECT_DEV_PATH:-/Users/cbliard/code/opf/openproject}
+  local -a dirs
+  dirs=($base_path/*(/))
+
+  # Find the latest release directory
+  local -a release_dirs=($base_path/release-*(/))
+  if [[ ${#release_dirs[@]} -gt 0 ]]; then
+    # Sort by version number and get the last one
+    last_release=$(printf '%s\n' "${release_dirs[@]##*/}" | sort -V | tail -1)
+  fi
+
+  # Create associative array for descriptions
+  local -A descriptions=(
+    dev "Development (dev branch)"
+    review "Code review (review branch)"
+    wip "Work in progress, could be any branch"
+    multitenancy "With multitenancy and subscription plugins"
+    bmds "BMDS hackathon"
+  )
+
+  # Add description for the latest release if it exists
+  if [[ -n $last_release ]]; then
+    descriptions[$last_release]="Latest release"
+  fi
+
+  # Separate into important and regular directories with descriptions
+  local -a main_candidates=()
+  local -a other_candidates=()
+
+  for dir in "${dirs[@]##*/}"; do
+    case $dir in
+      dev|$last_release|review|wip)
+        main_candidates+=("$dir:${descriptions[$dir]}")
+        ;;
+      release-*)
+        other_candidates+=("$dir:Previous releases")
+        ;;
+      *)
+        if [[ -n ${descriptions[$dir]} ]]; then
+          other_candidates+=("$dir:${descriptions[$dir]}")
+        else
+          other_candidates+=("$dir")
+        fi
+        ;;
+    esac
+  done
+
+  # Show main environments directories first
+  if [[ ${#main_candidates[@]} -gt 0 ]]; then
+    _describe -t important 'main environments' main_candidates
+  fi
+  if [[ ${#other_candidates[@]} -gt 0 ]]; then
+    _describe -t regular 'other environments' other_candidates
+  fi
+}
