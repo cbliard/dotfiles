@@ -32,16 +32,16 @@ _o() {
   for dir in "${dirs[@]##*/}"; do
     case $dir in
       dev|$last_release|review|wip)
-        main_candidates+=("$dir:${descriptions[$dir]}")
+        main_candidates+=("${dir}:${descriptions[$dir]}")
         ;;
       release-*)
-        other_candidates+=("$dir:Previous releases")
+        other_candidates+=("${dir}:Previous releases")
         ;;
       *)
         if [[ -n ${descriptions[$dir]} ]]; then
-          other_candidates+=("$dir:${descriptions[$dir]}")
+          other_candidates+=("${dir}:${descriptions[$dir]}")
         else
-          other_candidates+=("$dir")
+          other_candidates+=("${dir}")
         fi
         ;;
     esac
