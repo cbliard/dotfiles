@@ -6,9 +6,7 @@ function gcr() {
     exit 1
     ;;
   */release-??-?)
-    echo "In a release directory"
     local release=$(basename "$repo_path" | sed -E 's#release-(..)-(.)#release/\1.\2#')
-    echo "release: $release"
     git switch "$release"
     set +x
     ;;
